@@ -1,0 +1,16 @@
+{
+  "author": "Jairo Luiz <t4ngz3r0@gmail.com> (jairoluiz.com)",
+  "name": "allegro",
+  "description": "Allegro 5 bindings for Node.js",
+  "homepage": "github.com/tangzero/node-allegro",
+  "version": "0.0.1",
+  "main": "allegro",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tangzero/node-allegro.git"
+  },
+  "engines": { "node": "*" },
+  "scripts": {
+    "preinstall": "node-waf clean || (exit 0); node-waf configure build"
+  }
+}
