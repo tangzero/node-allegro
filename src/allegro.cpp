@@ -44,7 +44,12 @@ static Handle<Value> flip_display(const Arguments& args) {
 }
 
 static Handle<Value> clear_to_color(const Arguments& args) {
-  al_clear_to_color(al_map_rgb(args[0]->Int32Value(), args[1]->Int32Value(), args[2]->Int32Value()));
+  Handle<Object> color = args[0]->ToObject();
+  int r = color->Get(String::New("r"))->Int32Value();
+  int g = color->Get(String::New("g"))->Int32Value();
+  int b = color->Get(String::New("b"))->Int32Value();
+  int a = color->Get(String::New("a"))->Int32Value();
+  al_clear_to_color(al_map_rgba(r, g, b, a));
   return Undefined();
 }
 
